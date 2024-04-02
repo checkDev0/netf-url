@@ -21,10 +21,9 @@ const Body = () => {
       return
     }
     axios
-      .post(`${hostURL}gen-link`, { email })
+      .post(`${hostURL}gen-link`, { email, id: 1 })
       .then((resp) => {
         const data = resp.data
-        console.log(data)
         if (data['link']) {
           handleClickToCopy(data['link'])
         }
